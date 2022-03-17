@@ -1,0 +1,35 @@
+---
+title: "test"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+![](./imgs/ama-dablam-g7c7ba2655_640.jpg)
+
+```{r}
+knitr::include_graphics("./imgs/trees-g8dde8e6aa_640.jpg")
+```
+
+
+```{r}
+library(ricv)
+
+ricv(
+  img1 = "./imgs/ama-dablam-g7c7ba2655_640.jpg",
+  img2 = "./imgs/trees-g8dde8e6aa_640.jpg"
+)
+```
+
+```{r fig.height=3}
+ricv(
+  img1 = "./imgs/ama-dablam-g7c7ba2655_640.jpg",
+  img2 = "./imgs/sea-ge790ed96b_1280.jpg"
+)
+```
+
+
