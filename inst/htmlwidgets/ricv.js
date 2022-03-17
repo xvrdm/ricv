@@ -1,0 +1,1 @@
+(()=>{"use strict";HTMLWidgets,HTMLWidgets.widget({name:"ricv",type:"output",factory:function(e,t,n){return{renderValue:function(t){e.innerHTML=(e=>"<h1>"+e.message+"</h1>")(t)},resize:function(e,t){}}}})})();
