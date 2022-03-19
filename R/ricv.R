@@ -6,9 +6,10 @@
 #'
 #' @export
 #' @export
-ricv <- function(img1, img2) {
+ricv <- function(img1, img2, options = NULL) {
   random_id <- uuid::UUIDgenerate()
   viewer_id <- paste0("image-compare-", random_id)
+  user_options <- new_Options(options)
 
   x <- list(
     widgetId = random_id,
