@@ -25,7 +25,7 @@ HTMLWidgets.widget({
         const element = document.getElementById(x.widgetId);
         element.appendChild(imgViewer);
 
-        const viewer = new ImageCompare(imgViewer).mount();
+        const viewer = new ImageCompare(imgViewer, x.options).mount();
       },
 
       resize: function (width, height) {},

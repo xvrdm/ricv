@@ -24,6 +24,11 @@ assert_logical_unit_set <- function(x, k, mandatory = FALSE) {
 
 
 new_Options <- function(x = list()) {
+  if (is.null(x)) return(list())
+  if (is.list(x) && length(x) == 0) return(list())
+
+  stopifnot("options must be a list or NULL"=is.list(x))
+
   top_level_options <- c(
     "controlColor",
     "controlShadow",

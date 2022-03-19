@@ -15,7 +15,8 @@ ricv <- function(img1, img2, options = NULL) {
     widgetId = random_id,
     viewerId = viewer_id,
     img1 = img1,
-    img2 = img2
+    img2 = img2,
+    options = options
   )
 
   # create widget
