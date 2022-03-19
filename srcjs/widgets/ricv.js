@@ -9,8 +9,6 @@ HTMLWidgets.widget({
   factory: function (el, width, height) {
     return {
       renderValue: function (x) {
-        console.log(x);
-
         const imgViewer = document.createElement("div");
         imgViewer.id = x.viewerId;
 

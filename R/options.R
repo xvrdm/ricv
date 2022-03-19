@@ -22,6 +22,19 @@ assert_logical_unit_set <- function(x, k, mandatory = FALSE) {
   assert_type_unit_set(is.logical, "logical", x, k, mandatory = mandatory)
 }
 
+assert_known_attributes <- function(given, expected, src) {
+  names_diff <- setdiff(given, expected)
+  if (!identical(names_diff, character(0))) {
+    if (length(names_diff) == 1) {
+      stop(paste("One of the given", src, "options attributes is not valid:", names_diff),
+           call. = FALSE)
+    } else {
+      stop(paste("Some of the given", src, "options attributes are not valid:", paste(names_diff, collapse = ", ")),
+           call. = FALSE)
+    }
+  }
+}
+
 
 new_Options <- function(x = list()) {
   if (is.null(x)) return(list())
@@ -29,7 +42,7 @@ new_Options <- function(x = list()) {
 
   stopifnot("options must be a list or NULL"=is.list(x))
 
-  top_level_options <- c(
+  top_level_names <- c(
     "controlColor",
     "controlShadow",
     "addCircle",
@@ -44,11 +57,11 @@ new_Options <- function(x = list()) {
     "fluidMode"
   )
 
-  stopifnot(identical(setdiff(names(x), top_level_options), character(0)))
+  assert_known_attributes(names(x), top_level_names, "top level")
 
   if (!is.null(x$labelOptions)) {
     label_options_names <- c("before", "after", "onHover")
-    stopifnot(setdiff(names(x$labelOptions), label_options_names) != character(0))
+    assert_known_attributes(names(x$labelOptions), label_options_names, "labelOptions")
 
     label_options <- x$labelOptions
     assert_character_unit_set(label_options, "before")

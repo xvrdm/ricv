@@ -1,6 +1,10 @@
 test_that("invalid attributes name given to options cause stop", {
-  testthat::expect_error(new_Options(list(blabla=1)))
-  testthat::expect_error(new_Options(list(hello=T)))
+  testthat::expect_error(new_Options(list(blabla=1)),
+                         "One of the given top level options attributes is not valid: blabla")
+  testthat::expect_error(new_Options(list(hello=T, bye=2)),
+                         "Some of the given top level options attributes are not valid: hello, bye")
+  testthat::expect_error(new_Options(list(labelOptions=list(bye=2))),
+                         "One of the given labelOptions options attributes is not valid: bye")
 })
 
 test_that("options can only be a list or NULL", {
