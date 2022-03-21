@@ -1,0 +1,6 @@
+dependencies:
+ - name: image-compare-viewer
+   version: 1.5.0
+   src: htmlwidgets/lib/image-compare-viewer-1.5.0
+   script: image-compare-viewer.min.js
+   stylesheet: image-compare-viewer.min.css
