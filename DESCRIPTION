@@ -6,7 +6,7 @@ Authors@R: c(
       person("Xavier", "Adam", email="xvrdm@pm.me", role = c("aut", "cre")),
       person("Kyle", "Wetton", role = c("ctb", "cph"), comment = "image-compare-viewer library")
     )
-Maintainer: Xavier Adam (xvrdm@pm.me)
+Maintainer: Xavier Adam (xa.adam@pm.me)
 Description: Create Interactive Image Comparators from R with Kyle Wetton's
     'image-compare-viewer' Javascript Library and the 'htmlwidgets' package. 
     These comparators can be used directly from the R console, from 'RStudio', 
