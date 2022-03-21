@@ -1,12 +1,18 @@
 Package: ricv
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Create Interactive Image Comparator with the 'image-compare-viewer' Javascript Library
 Version: 0.1.0
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Authors@R: c(
+      person("Xavier", "Adam", email="xvrdm@pm.me", role = c("aut", "cre"))
+    )
+Maintainer: Xavier Adam (xvrdm@pm.me)
+Description: Create Interactive Image Comparator from R with the 
+    'image-compare-viewer' Javascript Library and the 'htmlwidgets' package. 
+    These comparators can be used directly from the R console, from 'RStudio', 
+    in Shiny applications and R Markdown documents.
+URL: https://github.com/xvrdm/ricv
+BugReports: https://github.com/xvrdm/ricv/issues
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports: 
