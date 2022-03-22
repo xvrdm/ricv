@@ -1,6 +1,16 @@
-#' <Add Title>
+#' Create an interactive image comparator
 #'
-#' <Add Description>
+#' This function creates an interactive image comparator. See website of the
+#' underlying project for examples: https://image-compare-viewer.netlify.app/
+#'
+#' @param img1 A path to an image file. This image will be placed to the left.
+#' @param img2 A path to an image file. This image will be placed to the right.
+#' @param options A list of image-compare-viewer options. See examples.
+#'
+#' @examples
+#' ricv("myimage1.jpg", "myimage2.jpg)
+#'
+#' ricv("img1.jpg", "img2.jpg", list(addCircle = T, hoverStart = T))
 #'
 #' @import htmlwidgets
 #'

@@ -2,10 +2,18 @@
 % Please edit documentation in R/ricv.R
 \name{ricv}
 \alias{ricv}
-\title{<Add Title>}
+\title{Create an interactive image comparator}
 \usage{
 ricv(img1, img2, options = NULL)
 }
+\arguments{
+\item{img1}{A path to an image file. This image will be placed to the left.}
+
+\item{img2}{A path to an image file. This image will be placed to the right.}
+
+\item{options}{A list of image-compare-viewer options. See examples.}
+}
 \description{
-<Add Description>
+This function creates an interactive image comparator. See website of the
+underlying project for examples: https://image-compare-viewer.netlify.app/
 }
