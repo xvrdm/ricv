@@ -14,8 +14,8 @@ test_that("options can only be a list or NULL", {
                          "options must be a list or NULL")
   testthat::expect_error(new_Options(c(controlColor = T)),
                          "options must be a list or NULL")
-  testthat::expect_equal(new_Options(NULL), list())
-  testthat::expect_equal(new_Options(list()), list())
+  testthat::expect_equal(unclass(new_Options(NULL)), list())
+  testthat::expect_equal(unclass(new_Options(list())), list())
 })
 
 test_that("invalid attribute value given to options causes stop", {
@@ -25,4 +25,9 @@ test_that("invalid attribute value given to options causes stop", {
                          "addCircle in options should be a single element of type logical but is a character")
   testthat::expect_error(new_Options(list(addCircle=c(T,T))),
                          "addCircle in options should be a single element but is made of 2 values")
+})
+
+test_that("valid attribute name/value pass", {
+  testthat::expect_equal(unclass(new_Options(list(addCircle=T))),
+                         list(addCircle=T))
 })

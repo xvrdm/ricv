@@ -37,8 +37,12 @@ assert_known_attributes <- function(given, expected, src) {
 
 
 new_Options <- function(x = list()) {
-  if (is.null(x)) return(list())
-  if (is.list(x) && length(x) == 0) return(list())
+  if (is.null(x)) {
+    return(structure(list(), class = "Options"))
+  }
+  if (is.list(x) && length(x) == 0) {
+    return(structure(list(), class = "Options"))
+  }
 
   stopifnot("options must be a list or NULL"=is.list(x))
 
@@ -81,5 +85,5 @@ new_Options <- function(x = list()) {
   assert_numeric_unit_set(x, "startingPoint")
   assert_logical_unit_set(x, "fluidMode")
 
-  structure(ifelse(is.null(x), list(), x), class = "Options")
+  structure(x, class = "Options")
 }
