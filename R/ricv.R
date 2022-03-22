@@ -3,24 +3,26 @@
 #' This function creates an interactive image comparator. See website of the
 #' underlying project for examples: https://image-compare-viewer.netlify.app/
 #'
-#' @param img1 A path to an image file. This image will be placed to the left.
-#' @param img2 A path to an image file. This image will be placed to the right.
-#' @param options A list of image-compare-viewer options. See examples.
-#'
-#' @examples
-#' ricv("myimage1.jpg", "myimage2.jpg)
-#'
-#' ricv("img1.jpg", "img2.jpg", list(addCircle = T, hoverStart = T))
+#' @param img1 A path to an image file. This image will be placed to the left (i.e. 'before' image).
+#' @param img2 A path to an image file. This image will be placed to the right (i.e. 'after' image).
+#' @param options A list of image-compare-viewer options. See documentation for all options.
+#' @param css A list of 3 optional attributes ('both', 'before' and 'after'), each containing CSS style attributes targeting the label corresponding to the used attribute name.
 #'
 #' @import htmlwidgets
 #'
 #' @export
-ricv <- function(img1, img2, options = NULL) {
+ricv <- function(img1, img2, options = NULL, css = NULL) {
+
+  print(options)
+  print(css)
+  valid_options <- new_Options(options)
+  print(valid_options)
 
   x <- list(
     img1 = img1,
     img2 = img2,
-    options = options
+    options = unclass(valid_options),
+    css = css
   )
 
   htmlwidgets::createWidget(

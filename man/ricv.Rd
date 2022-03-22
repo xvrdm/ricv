@@ -4,14 +4,16 @@
 \alias{ricv}
 \title{Create an interactive image comparator}
 \usage{
-ricv(img1, img2, options = NULL)
+ricv(img1, img2, options = NULL, css = NULL)
 }
 \arguments{
-\item{img1}{A path to an image file. This image will be placed to the left.}
+\item{img1}{A path to an image file. This image will be placed to the left (i.e. 'before' image).}
 
-\item{img2}{A path to an image file. This image will be placed to the right.}
+\item{img2}{A path to an image file. This image will be placed to the right (i.e. 'after' image).}
 
-\item{options}{A list of image-compare-viewer options. See examples.}
+\item{options}{A list of image-compare-viewer options. See documentation for all options.}
+
+\item{css}{A list of 3 optional attributes ('both', 'before' and 'after'), each containing CSS style attributes targeting the label corresponding to the used attribute name.}
 }
 \description{
 This function creates an interactive image comparator. See website of the
