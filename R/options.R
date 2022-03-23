@@ -67,10 +67,9 @@ new_Options <- function(x = list()) {
     label_options_names <- c("before", "after", "onHover")
     assert_known_attributes(names(x$labelOptions), label_options_names, "labelOptions")
 
-    label_options <- x$labelOptions
-    assert_character_unit_set(label_options$before, "before")
-    assert_character_unit_set(labelOptions$after, "after")
-    assert_logical_unit_set(labelOptions$onHover, "onHover")
+    assert_character_unit_set(x$labelOptions$before, "before")
+    assert_character_unit_set(x$labelOptions$after, "after")
+    assert_logical_unit_set(x$labelOptions$onHover, "onHover")
   }
 
   assert_character_unit_set(x$controlColor, "controlColor")
@@ -86,4 +85,23 @@ new_Options <- function(x = list()) {
   assert_logical_unit_set(x$fluidMode, "fluidMode")
 
   structure(x, class = "Options")
+}
+
+opts <- function(
+
+) {
+  assert_character_unit_set(label_options$before, "before")
+  assert_character_unit_set(labelOptions$after, "after")
+  assert_logical_unit_set(labelOptions$onHover, "onHover")
+  assert_character_unit_set(controlColor, "controlColor")
+  assert_logical_unit_set(controlShadow, "controlShadow")
+  assert_logical_unit_set(addCircle, "addCircle")
+  assert_logical_unit_set(addCircleBlur, "addCircleBlur")
+  assert_logical_unit_set(showLabels, "showLabels")
+  assert_logical_unit_set(smoothing, "smoothing")
+  assert_numeric_unit_set(smoothingAmount, "smoothingAmount")
+  assert_logical_unit_set(hoverStart, "hoverStart")
+  assert_logical_unit_set(verticalMode, "verticalMode")
+  assert_numeric_unit_set(startingPoint, "startingPoint")
+  assert_logical_unit_set(fluidMode, "fluidMode")
 }
