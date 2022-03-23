@@ -1,14 +1,14 @@
 assert_type_unit_set <- function(test, type_in_msg, x, k, mandatory) {
-  if (is.null(x[[k]]) && mandatory)
+  if (is.null(x) && mandatory)
     stop(paste(k, "in options cannot be null or missing"), call. = F)
 
-  if (!is.null(x[[k]]) && !test(x[[k]])) stop(
-    paste(k, "in options should be a single element of type", type_in_msg, "but is a", typeof(x[[k]])),
+  if (!is.null(x) && !test(x)) stop(
+    paste(k, "in options should be a single element of type", type_in_msg, "but is a", typeof(x)),
     call. = F
   )
 
-  if(!is.null(x[[k]]) && length(x[[k]]) > 1) stop(
-    paste(k, "in options should be a single element but is made of", length(x[[k]]), "values"),
+  if(!is.null(x) && length(x) > 1) stop(
+    paste(k, "in options should be a single element but is made of", length(x), "values"),
     call. = F
   )
 }
@@ -68,22 +68,22 @@ new_Options <- function(x = list()) {
     assert_known_attributes(names(x$labelOptions), label_options_names, "labelOptions")
 
     label_options <- x$labelOptions
-    assert_character_unit_set(label_options, "before")
-    assert_character_unit_set(labelOptions, "after")
-    assert_logical_unit_set(labelOptions, "onHover")
+    assert_character_unit_set(label_options$before, "before")
+    assert_character_unit_set(labelOptions$after, "after")
+    assert_logical_unit_set(labelOptions$onHover, "onHover")
   }
 
-  assert_character_unit_set(x, "controlColor")
-  assert_logical_unit_set(x, "controlShadow")
-  assert_logical_unit_set(x, "addCircle")
-  assert_logical_unit_set(x, "addCircleBlur")
-  assert_logical_unit_set(x, "addshowLabels")
-  assert_logical_unit_set(x, "smoothing")
-  assert_numeric_unit_set(x, "smoothingAmount")
-  assert_logical_unit_set(x, "hoverStart")
-  assert_logical_unit_set(x, "verticalMode")
-  assert_numeric_unit_set(x, "startingPoint")
-  assert_logical_unit_set(x, "fluidMode")
+  assert_character_unit_set(x$controlColor, "controlColor")
+  assert_logical_unit_set(x$controlShadow, "controlShadow")
+  assert_logical_unit_set(x$addCircle, "addCircle")
+  assert_logical_unit_set(x$addCircleBlur, "addCircleBlur")
+  assert_logical_unit_set(x$showLabels, "showLabels")
+  assert_logical_unit_set(x$smoothing, "smoothing")
+  assert_numeric_unit_set(x$smoothingAmount, "smoothingAmount")
+  assert_logical_unit_set(x$hoverStart, "hoverStart")
+  assert_logical_unit_set(x$verticalMode, "verticalMode")
+  assert_numeric_unit_set(x$startingPoint, "startingPoint")
+  assert_logical_unit_set(x$fluidMode, "fluidMode")
 
   structure(x, class = "Options")
 }
