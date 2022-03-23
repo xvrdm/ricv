@@ -17,5 +17,5 @@ ricv(img1, img2, options = NULL, css = NULL)
 }
 \description{
 This function creates an interactive image comparator. See website of the
-underlying project for examples: https://image-compare-viewer.netlify.app/
+underlying project for examples: \url{https://image-compare-viewer.netlify.app/}
 }

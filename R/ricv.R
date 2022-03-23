@@ -1,7 +1,7 @@
 #' Create an interactive image comparator
 #'
 #' This function creates an interactive image comparator. See website of the
-#' underlying project for examples: https://image-compare-viewer.netlify.app/
+#' underlying project for examples: \url{https://image-compare-viewer.netlify.app/}
 #'
 #' @param img1 A path to an image file. This image will be placed to the left (i.e. 'before' image).
 #' @param img2 A path to an image file. This image will be placed to the right (i.e. 'after' image).
