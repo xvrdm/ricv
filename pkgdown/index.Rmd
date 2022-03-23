@@ -1,0 +1,90 @@
+---
+title: "ricv"
+output: md_document
+always_allow_html: true
+---
+
+# ricv
+
+ricv lets you create interactive image comparators from R. It works in [Rmarkdown](https://rmarkdown.rstudio.com/) documents and [Shiny](https://shiny.rstudio.com/) application. Under the hood, it is just a tiny wrapper around the [image-compare-viewer](https://github.com/kylewetton/image-compare-viewer/) Javascript Library.
+
+## Installation
+
+```{r eval=FALSE}
+devtools::install("xvrdm/ricv")
+```
+
+## Usage
+
+```{r eval=FALSE}
+library(ricv)
+ricv(img1 = "mountains.jpg", img2 = "trees.jpg",
+     options = list(addCircle = T, hoverStart = T))
+```
+
+```{r echo=FALSE}
+htmltools::tagList(
+  htmltools::tags$link(rel = "stylesheet", href="https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.css"),
+  htmltools::tags$script(src = "https://unpkg.com/image-compare-viewer/dist/image-compare-viewer.min.js")
+)
+```
+
+```{r echo=FALSE}
+b64_jpg1 <- knitr::image_uri("ama-dablam-g7c7ba2655_640.jpg")
+b64_jpg2 <- knitr::image_uri("trees-g8dde8e6aa_640.jpg")
+htmltools::div(
+  id = "image-compare",
+  htmltools::img(src=b64_jpg1),
+  htmltools::img(src=b64_jpg2),
+)
+```
+
+<br />
+
+## CSS
+
+The `ricv()` function also has an argument named `css`, which expect a list in the format:
+
+```
+list(both = "some-css-for-both-label",
+     before = "some-css-for-both-label"
+     after = "some-css-for-the-after-label")
+```
+
+This can be used to modify the look of the labels. However, remember that the actual display of the labels is driven by one of the `options`.
+
+```{r eval=FALSE}
+ricv(
+  img1 = "mountains.jpg", img2 = "trees.jpg",
+  options = list(addCircle = T, hoverStart = T, showLabels = T),
+  css = list(both = "padding: 40px;", 
+             before = "font-size: 2rem;", 
+             after = "font-size: 4rem; font-family: serif;")
+)
+```
+
+```{r echo=FALSE}
+htmltools::tags$style("
+#image-compare-2 .icv__label {padding: 40px;}
+#image-compare-2 .icv__label-before {font-size: 2rem;}
+#image-compare-2 .icv__label-after {font-size: 4rem; font-family: serif;}
+")
+htmltools::div(
+  id = "image-compare-2",
+  htmltools::img(src=b64_jpg1),
+  htmltools::img(src=b64_jpg2),
+)
+```
+```{r echo=FALSE}
+htmltools::includeScript("main.js")
+```
+
+<br />
+
+## Options
+
+If you don´t want to create by hand the `options` list accepted by `ricv()`, you can use the helper function `ricv_opts()`, which gives you autocomplete and a convenient reminder of the possible attributes. For reference, see below all the possible options. The [image-compare-viewer](https://github.com/kylewetton/image-compare-viewer/) has examples for a few of them.
+
+```{r}
+ricv::ricv_opts()
+```
