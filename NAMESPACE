@@ -3,4 +3,5 @@
 export(renderRicv)
 export(ricv)
 export(ricvOutput)
+export(ricv_opts)
 import(htmlwidgets)
