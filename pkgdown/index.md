@@ -40,7 +40,7 @@ that the actual display of the labels is driven by one of the `options`.
 
     ricv(
       img1 = "mountains.jpg", img2 = "trees.jpg",
-      options = list(addCircle = T, hoverStart = T, showLabels = T),
+      options = list(showLabels = T),
       css = list(both = "padding: 40px;", 
                  before = "font-size: 2rem;", 
                  after = "font-size: 4rem; font-family: serif;")
