@@ -4,13 +4,13 @@ ricv lets you create interactive image comparators from R. It works in [Rmarkdow
 
 ## Installation
 
-```{r eval=FALSE}
+```r
 devtools::install("xvrdm/ricv")
 ```
 
 ## Usage
 
-```{r eval=FALSE}
+```r
 library(ricv)
 ricv(img1 = "mountains.jpg", img2 = "trees.jpg",
      options = list(addCircle = T, hoverStart = T))
@@ -32,7 +32,7 @@ list(both = "some-css-for-both-label",
 
 This can be used to modify the look of the labels. However, remember that the actual display of the labels is driven by one of the `options`.
 
-```{r eval=FALSE}
+```r
 ricv(
   img1 = "mountains.jpg", img2 = "trees.jpg",
   options = list(showLabels = T),
