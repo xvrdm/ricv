@@ -17,6 +17,7 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     htmlwidgets,
+    ggplot2,
 Suggests: 
     pkgdown,
     testthat (>= 3.0.0)

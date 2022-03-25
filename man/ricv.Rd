@@ -4,16 +4,33 @@
 \alias{ricv}
 \title{Create an interactive image comparator}
 \usage{
-ricv(img1, img2, options = NULL, css = NULL)
+ricv(
+  img1,
+  img2,
+  options = NULL,
+  css = NULL,
+  ggsave_dir = "ricv_tmp",
+  ggsave_fnames = NULL,
+  ggsave_ext = ".png",
+  ...
+)
 }
 \arguments{
-\item{img1}{A path to an image file. This image will be placed to the left (i.e. 'before' image).}
+\item{img1}{A path to an image file, or a ggplot object. This image will be placed to the left (i.e. 'before' image).}
 
-\item{img2}{A path to an image file. This image will be placed to the right (i.e. 'after' image).}
+\item{img2}{A path to an image file, or a ggplot object. This image will be placed to the right (i.e. 'after' image).}
 
 \item{options}{A list of image-compare-viewer options. See documentation for all options.}
 
 \item{css}{A list of 3 optional attributes ('both', 'before' and 'after'), each containing CSS style attributes targeting the label corresponding to the used attribute name.}
+
+\item{ggsave_dir}{If either img1 or img2 are ggplot2 objects, a name of a subfolder in which to save the images}
+
+\item{ggsave_fnames}{Filenames to be used by ggplot2::ggsave when img1 or img2 are ggplot2 objects. Should be a vector of the same length as the number of ggplot2 objects. If null, filenames are created}
+
+\item{ggsave_ext}{Extension to use for the ggplot2::ggsave, if filenames are not specified in ggsave_fnames}
+
+\item{...}{Further arguments to be passed to ggplot2::ggsave if img1 or img2 are ggplot objects}
 }
 \description{
 This function creates an interactive image comparator. See website of the
