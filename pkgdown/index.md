@@ -9,7 +9,7 @@ Javascript Library.
 
 ## Installation
 
-    devtools::install("xvrdm/ricv")
+    devtools::install_github("xvrdm/ricv")
 
 ## Usage
 
