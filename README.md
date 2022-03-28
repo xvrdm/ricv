@@ -5,7 +5,7 @@ ricv lets you create interactive image comparators from R. It works in [Rmarkdow
 ## Installation
 
 ```r
-devtools::install("xvrdm/ricv")
+devtools::install_github("xvrdm/ricv")
 ```
 
 ## Usage
