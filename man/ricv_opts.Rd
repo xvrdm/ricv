@@ -46,7 +46,7 @@ ricv_opts(
 
 \item{verticalMode}{A logical. Whether or not to set the control to vertical mode.}
 
-\item{startingPoint}{A numeric value. Represent the percentage where the line start (e.g. '50' means the middle 50%).}
+\item{startingPoint}{A numeric value. Represent the percentage where the line start (e.g. '50' means the middle 50\%).}
 
 \item{fluidMode}{A logical. Fluid mode enables the container to have fluid height and width, independent of each other, useful for using Image Compare Viewer in a full screen container for instance. The image is dynamically cropped using the CSS background 'cover' property.}
 }

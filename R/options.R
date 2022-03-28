@@ -105,7 +105,7 @@ new_Options <- function(x = list()) {
 #' @param smoothingAmount A numeric value. Set the amount of smoothing.
 #' @param hoverStart A logical. Whether or not to activate click-less control.
 #' @param verticalMode A logical. Whether or not to set the control to vertical mode.
-#' @param startingPoint A numeric value. Represent the percentage where the line start (e.g. '50' means the middle 50%).
+#' @param startingPoint A numeric value. Represent the percentage where the line start (e.g. '50' means the middle 50\%).
 #' @param fluidMode A logical. Fluid mode enables the container to have fluid height and width, independent of each other, useful for using Image Compare Viewer in a full screen container for instance. The image is dynamically cropped using the CSS background 'cover' property.
 #'
 #' @return a list of options that can be used for the `options` argument of \code{\link{ricv}}
