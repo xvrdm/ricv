@@ -1,7 +1,7 @@
 Package: ricv
 Type: Package
 Title: Create Interactive Image Comparator with the 'image-compare-viewer' Javascript Library
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: c(
       person("Xavier", "Adam", email="xa.adam@pm.me", role = c("aut", "cre")),
       person("Kyle", "Wetton", role = c("ctb", "cph"), comment = "image-compare-viewer library")
