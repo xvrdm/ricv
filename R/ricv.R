@@ -13,11 +13,7 @@
 #' @export
 ricv <- function(img1, img2, options = NULL, css = NULL) {
 
-  print(options)
-  print(css)
   valid_options <- new_Options(options)
-  print(valid_options)
-
   x <- list(
     img1 = img1,
     img2 = img2,
