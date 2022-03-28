@@ -31,7 +31,8 @@ ui <- fluidPage(
         # Show a plot of the generated distribution
         mainPanel(
            plotOutput("distPlot"),
-           ricv::ricvOutput("ricv1")
+           ricv::ricvOutput("ricv1"),
+           ricv::ricvOutput("ricv2")
         )
     )
 )
@@ -51,8 +52,17 @@ server <- function(input, output) {
     output$ricv1 <- ricv::renderRicv({
       ricv(
         img1 = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
-        img2 = "https://www.eye-image.nl/assets/files/eye-image-homepage.1920x0x0x100.jpg",
+        img2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+        # img2 = "https://www.eye-image.nl/assets/files/eye-image-homepage.1920x0x0x100.jpg",
         options = list(addCircle = T, hoverStart = T)
+      )
+    })
+    output$ricv2 <- ricv::renderRicv({
+      ricv(
+        img1 = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+        img2 = "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/640px-Image_created_with_a_mobile_phone.png",
+        # img2 = "https://www.eye-image.nl/assets/files/eye-image-homepage.1920x0x0x100.jpg",
+        options = list(addCircle = T, hoverStart = T, fluidMode = T)
       )
     })
 }
