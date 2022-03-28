@@ -50,6 +50,8 @@ ricv(
 
 If you don´t want to create by hand the `options` list accepted by `ricv()`, you can use the helper function `ricv_opts()`, which gives you autocomplete and a convenient reminder of the possible attributes. For reference, see below all the possible options. The [image-compare-viewer](https://github.com/kylewetton/image-compare-viewer/) has examples for a few of them.
 
+Users experiencing **problems with image sizes** (e.g. in shiny, the first image appears very big while the second appears very small) should first try setting the option `fluidMode` to `TRUE`.
+
 ```{r}
 ricv::ricv_opts()
 ```
@@ -96,3 +98,4 @@ ricv::ricv_opts()
     ## 
     ## $labelOptions$onHover
     ## [1] TRUE
+    

@@ -117,6 +117,7 @@ const viewer2 = new ImageCompare(element2, {showLabels: true}).mount();</script>
 <h2 id="options">Options<a class="anchor" aria-label="anchor" href="#options"></a>
 </h2>
 <p>If you don´t want to create by hand the <code>options</code> list accepted by <code><a href="reference/ricv.html">ricv()</a></code>, you can use the helper function <code><a href="reference/ricv_opts.html">ricv_opts()</a></code>, which gives you autocomplete and a convenient reminder of the possible attributes. For reference, see below all the possible options. The <a href="https://github.com/kylewetton/image-compare-viewer/" class="external-link">image-compare-viewer</a> has examples for a few of them.</p>
+<p>Users experiencing <strong>problems with image sizes</strong> (e.g. in shiny, the first image appears very big while the second appears very small) should first try setting the option <code>fluidMode</code> to <code>TRUE</code>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>ricv<span class="sc">::</span><span class="fu">ricv_opts</span>()</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="do">## $controlColor</span></span>
